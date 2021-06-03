@@ -23,3 +23,7 @@ Pastikan webserver Apache dan MySQL server sudah dijalankan. Kemudian buka melal
 
 ## Membuat Database: Studi Kasus Data Barang
 
+![Membuat Database Studi Kasus Data Barang](https://user-images.githubusercontent.com/81541764/120700998-92392580-c4dc-11eb-9ee1-c518731a5ab1.JPG)
+
+## Membuat Database
+
