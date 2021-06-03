@@ -11,13 +11,6 @@ Kelas : TI.19.C1
 ~~~
 ## Langkah-langkah Praktikum
 
-1. Persiapkan text editor misalnya VSCode.
-![VSCode](https://user-images.githubusercontent.com/81541764/120703419-784d1200-c4df-11eb-99a7-6ace8f0e244a.JPG)
-
-2. Buat folder baru dengan nama lab8_php_database pada docroot webserver (htdocs)
-![lab8_database](https://user-images.githubusercontent.com/81541764/120705926-9ff1a980-c4e2-11eb-9373-1a9cc85314e8.JPG)
-
-
 ## Persiapan
 Untuk memulai membuat aplikasi CRUD sederhana, yang perlu disiapkan adalah database server menggunakan MySQL. Pastikan MySQL Server sudah dapat dijalankan melalui XAMPP.
 
@@ -62,4 +55,11 @@ INSERT INTO data_barang (kategori, nama, gambar, harga_beli, harga_jual, stok) V
 ## Membuat Program CRUD
 Buat folder lab8_php_database pada root directory web server (d:\xampp\htdocs)
 ![lab8_database](https://user-images.githubusercontent.com/81541764/120710002-cf56e500-c4e7-11eb-98c1-75c7573a1286.JPG)
+
+Kemudian untuk mengakses direktory tersebut pada web server dengan mengakses URL: http://localhost/lab8_php_database/
+![localhost](https://user-images.githubusercontent.com/81541764/120710367-42f8f200-c4e8-11eb-9b0d-586eae21e220.JPG)
+
+
+
+
 
