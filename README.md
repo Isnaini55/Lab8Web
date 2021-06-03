@@ -15,7 +15,7 @@ Kelas : TI.19.C1
 ![VSCode](https://user-images.githubusercontent.com/81541764/120703419-784d1200-c4df-11eb-99a7-6ace8f0e244a.JPG)
 
 2. Buat folder baru dengan nama lab8_php_database pada docroot webserver (htdocs)
-![lab8_database](https://user-images.githubusercontent.com/81541764/120703929-22c53500-c4e0-11eb-81a7-c0ad87f28a07.JPG)
+![lab8_database](https://user-images.githubusercontent.com/81541764/120705926-9ff1a980-c4e2-11eb-9373-1a9cc85314e8.JPG)
 
 
 ## Persiapan
@@ -32,4 +32,27 @@ Pastikan webserver Apache dan MySQL server sudah dijalankan. Kemudian buka melal
 ![Membuat Database Studi Kasus Data Barang](https://user-images.githubusercontent.com/81541764/120700998-92392580-c4dc-11eb-9ee1-c518731a5ab1.JPG)
 
 ## Membuat Database
+~~~
+CREATE DATABASE latihan1;
+~~~
+![Membuat Database](https://user-images.githubusercontent.com/81541764/120708688-17750800-c4e6-11eb-9438-4923acca5428.JPG)
 
+## Membuat Tabel
+~~~
+CREATE TABLE data_barang (
+  id_barang int(10) auto_increment Primary Key,
+  kategori varchar(30),
+  nama varchar(30),
+  gambar varchar(100),
+  harga_beli decimal(10,0),
+  harga_jual decimal(10,0),
+  stok int(4)
+);
+~~~
+![Membuat Tabel](https://user-images.githubusercontent.com/81541764/120709012-86eaf780-c4e6-11eb-86a9-39619a505022.JPG)
+
+## Menambahkan Data
+~~~
+INSERT INTO data_barang (kategori, nama, gambar, harga_beli, harga_jual, stok) VALUES ('Elektronik', 'HP Samsung Android', 'hp_samsung.jpg', 2000000, 2400000, 5), ('Elektronik', 'HP Xiaomi Android', 'hp_xiaomi.jpg', 1000000, 1400000, 5), ('Elektronik', 'HP OPPO Android', 'hp_oppo.jpg', 1800000, 2300000, 5);
+~~~
+![Menambahkan Data](https://user-images.githubusercontent.com/81541764/120709828-8dc63a00-c4e7-11eb-91c5-6fa5366116be.JPG)
