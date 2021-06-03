@@ -53,6 +53,13 @@ CREATE TABLE data_barang (
 
 ## Menambahkan Data
 ~~~
-INSERT INTO data_barang (kategori, nama, gambar, harga_beli, harga_jual, stok) VALUES ('Elektronik', 'HP Samsung Android', 'hp_samsung.jpg', 2000000, 2400000, 5), ('Elektronik', 'HP Xiaomi Android', 'hp_xiaomi.jpg', 1000000, 1400000, 5), ('Elektronik', 'HP OPPO Android', 'hp_oppo.jpg', 1800000, 2300000, 5);
+INSERT INTO data_barang (kategori, nama, gambar, harga_beli, harga_jual, stok) VALUES ('Elektronik', 'HP Samsung Android',
+'hp_samsung.jpg', 2000000, 2400000, 5), ('Elektronik', 'HP Xiaomi Android', 'hp_xiaomi.jpg', 1000000, 1400000, 5),
+('Elektronik', 'HP OPPO Android', 'hp_oppo.jpg', 1800000, 2300000, 5);
 ~~~
 ![Menambahkan Data](https://user-images.githubusercontent.com/81541764/120709828-8dc63a00-c4e7-11eb-91c5-6fa5366116be.JPG)
+
+## Membuat Program CRUD
+Buat folder lab8_php_database pada root directory web server (d:\xampp\htdocs)
+![lab8_database](https://user-images.githubusercontent.com/81541764/120710002-cf56e500-c4e7-11eb-98c1-75c7573a1286.JPG)
+
