@@ -54,12 +54,91 @@ INSERT INTO data_barang (kategori, nama, gambar, harga_beli, harga_jual, stok) V
 
 ## Membuat Program CRUD
 Buat folder lab8_php_database pada root directory web server (d:\xampp\htdocs)
+
 ![lab8_database](https://user-images.githubusercontent.com/81541764/120710002-cf56e500-c4e7-11eb-98c1-75c7573a1286.JPG)
 
-Kemudian untuk mengakses direktory tersebut pada web server dengan mengakses URL: http://localhost/lab8_php_database/
+Kemudian untuk mengakses direktory tersebut pada web server dengan mengakses URL:
+http://localhost/lab8_php_database/
+
 ![localhost](https://user-images.githubusercontent.com/81541764/120710367-42f8f200-c4e8-11eb-9b0d-586eae21e220.JPG)
 
+## Membuat file koneksi database
+Buat file baru dengan nama koneksi.php
+~~~
+<?php
+    $host = "localhost";
+    $user = "root";
+    $pass = "";
+    $db = "latihan1";
 
+    $conn = mysqli_connect($host, $user, $pass, $db);
+    if ($conn == false)
+    {
+        echo "Koneksi ke server gagal.";
+        die();
+    } #else echo "Koneksi berhasil";
+?>
+~~~
 
+Buka melalui browser untuk menguji koneksi database (untuk menyampilkan pesan koneksi berhasil, uncomment pada perintah echo “koneksi berhasil”;
+![koneksi](https://user-images.githubusercontent.com/81541764/120833109-9bcd9680-c58b-11eb-8551-70a0b52c46bf.JPG)
+
+## Membuat file index untuk menampilkan data (Read)
+Buat file baru dengan nama index.php
+~~~
+<?php
+include("koneksi.php");
+
+// query untuk menampilkan data
+$sql = 'SELECT * FROM data_barang';
+$result = mysqli_query($conn, $sql);
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Data Barang</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Barang</h1>
+        <div class="main">
+            <table>
+            <tr>
+                <th>Gambar</th>
+                <th>Nama Barang</th>
+                <th>Katagori</th>
+                <th>Harga Jual</th>
+                <th>Harga Beli</th>
+                <th>Stok</th>
+                <th>Aksi</th>
+            </tr>
+            <?php if($result): ?>
+            <?php while($row = mysqli_fetch_array($result)): ?>
+            <tr>
+                <td><img src="gambar/<?= $row['gambar'];?>" alt="<?=
+$row['nama'];?>"></td>
+                <td><?= $row['nama'];?></td>
+                <td><?= $row['kategori'];?></td>
+                <td><?= $row['harga_beli'];?></td>
+                <td><?= $row['harga_jual'];?></td>
+                <td><?= $row['stok'];?></td>
+                <td><?= $row['id_barang'];?></td>
+            </tr>
+            <?php endwhile; else: ?>
+            <tr>
+                <td colspan="7">Belum ada data</td>
+            </tr>
+            <?php endif; ?>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+~~~
+
+![index](https://user-images.githubusercontent.com/81541764/120837370-cff78600-c590-11eb-867b-9c07a29fea99.JPG)
 
 
