@@ -327,7 +327,8 @@ function is_select($var, $val) {
 </html>
 ~~~
 
-![ubah](https://user-images.githubusercontent.com/81541764/120845961-b3ad1680-c59b-11eb-9e1a-e54d3494a9cd.JPG)
+![ubah](https://user-images.githubusercontent.com/81541764/120856079-7b143980-c5a9-11eb-95f2-4c683b6b38fb.JPG)
+
 
 ## Menghapus Data (Delete)
 Buat file baru dengan nama hapus.php
@@ -343,6 +344,7 @@ header('location: index.php');
 ?>
 ~~~
 
-![hapus](https://user-images.githubusercontent.com/81541764/120848068-86ae3300-c59e-11eb-88d4-03e72784dab2.JPG)
+![hapus](https://user-images.githubusercontent.com/81541764/120856234-b7479a00-c5a9-11eb-89e3-307c9c3da75a.JPG)
 
-![hapus_2](https://user-images.githubusercontent.com/81541764/120848864-89f5ee80-c59f-11eb-81bc-059440123f50.JPG)
+![hapus_2](https://user-images.githubusercontent.com/81541764/120856248-bc0c4e00-c5a9-11eb-9984-cdd1c09149a3.JPG)
+
