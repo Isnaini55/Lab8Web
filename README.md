@@ -42,7 +42,9 @@ CREATE TABLE data_barang (
   stok int(4)
 );
 ~~~
-![Membuat Tabel](https://user-images.githubusercontent.com/81541764/120709012-86eaf780-c4e6-11eb-86a9-39619a505022.JPG)
+
+![Membuat Tabel](https://user-images.githubusercontent.com/81541764/120838475-0da8de80-c592-11eb-89ab-b3bffe7c841b.JPG)
+
 
 ## Menambahkan Data
 ~~~
@@ -50,7 +52,9 @@ INSERT INTO data_barang (kategori, nama, gambar, harga_beli, harga_jual, stok) V
 'hp_samsung.jpg', 2000000, 2400000, 5), ('Elektronik', 'HP Xiaomi Android', 'hp_xiaomi.jpg', 1000000, 1400000, 5),
 ('Elektronik', 'HP OPPO Android', 'hp_oppo.jpg', 1800000, 2300000, 5);
 ~~~
-![Menambahkan Data](https://user-images.githubusercontent.com/81541764/120709828-8dc63a00-c4e7-11eb-91c5-6fa5366116be.JPG)
+
+![Menambahkan Data](https://user-images.githubusercontent.com/81541764/120838882-85770900-c592-11eb-98a3-09f61df16f80.jpg)
+
 
 ## Membuat Program CRUD
 Buat folder lab8_php_database pada root directory web server (d:\xampp\htdocs)
@@ -139,6 +143,87 @@ $row['nama'];?>"></td>
 </html>
 ~~~
 
-![index](https://user-images.githubusercontent.com/81541764/120837370-cff78600-c590-11eb-867b-9c07a29fea99.JPG)
+![index](https://user-images.githubusercontent.com/81541764/120838943-94f65200-c592-11eb-8613-b4c5440b7cfc.JPG)
 
+## Menambah Data (Create)
+Buat file baru dengan nama tambah.php
+~~~
+<?php
+error_reporting(E_ALL);
+include_once 'koneksi.php';
+if (isset($_POST['submit']))
+{
+    $nama = $_POST['nama'];
+    $kategori = $_POST['kategori'];
+    $harga_jual = $_POST['harga_jual'];
+    $harga_beli = $_POST['harga_beli'];
+    $stok = $_POST['stok'];
+    $file_gambar = $_FILES['file_gambar'];
+    $gambar = null;
+    if ($file_gambar['error'] == 0)
+    {
+    $filename = str_replace(' ', '_',$file_gambar['name']);
+    $destination = dirname(__FILE__) .'/gambar/' . $filename;
+    if(move_uploaded_file($file_gambar['tmp_name'], $destination))
+    {
+    $gambar = 'gambar/' . $filename;;
+    }
+    }
+    $sql = 'INSERT INTO data_barang (nama, kategori,harga_jual, harga_beli, stok, gambar) ';
+    $sql .= "VALUE ('{$nama}', '{$kategori}','{$harga_jual}', '{$harga_beli}', '{$stok}', '{$gambar}')";
+    $result = mysqli_query($conn, $sql);
+    header('location: index.php');
+}
 
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Tambah Barang</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Tambah Barang</h1>
+        <div class="main">
+        <form method="post" action="tambah.php" enctype="multipart/form-data">
+    <div class="input">
+    <label>Nama Barang</label>
+    <input type="text" name="nama" />
+    </div>
+    <div class="input">
+        <label>Kategori</label>
+        <select name="kategori">
+            <option value="Komputer">Komputer</option>
+            <option value="Elektronik">Elektronik</option>
+            <option value="Hand Phone">Hand Phone</option>
+        </select>
+    </div>
+    <div class="input">
+        <label>Harga Jual</label>
+        <input type="text" name="harga_jual" />
+    </div>
+    <div class="input">
+    <label>Harga Beli</label>
+    <input type="text" name="harga_beli" />
+    </div>
+    <div class="input">
+        <label>Stok</label>
+        <input type="text" name="stok" />
+    </div>
+    <div class="input">
+        <label>File Gambar</label>
+        <input type="file" name="file_gambar" />
+    </div>
+    <div class="submit">
+        <input type="submit" name="submit" value="Simpan" />
+    </div>
+</form>
+</div>
+</div>
+</body>
+</html>
+~~~
+
+![tambah barang](https://user-images.githubusercontent.com/81541764/120839207-dedf3800-c592-11eb-9e7a-b17a48280024.JPG)
