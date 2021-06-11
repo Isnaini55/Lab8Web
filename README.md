@@ -1,6 +1,6 @@
 # Lab8Web
 
-# Praktikum 8
+# Praktikum8
 
 # Pemograman WEB
 
